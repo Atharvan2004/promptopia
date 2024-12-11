@@ -1,8 +1,11 @@
 import Feed from "@components/Feed"
 import Nav from "@components/Nav"
+import { Suspense } from "react"
 
 const Home = () => {
   return (
+    <Suspense fallback={<div>Loading.....</div>}>
+
     <section className="w-full flex-center flex-col">
         <Nav/>
         <h1 className="head_text text-center">
@@ -15,6 +18,7 @@ const Home = () => {
         </p>
         <Feed/>
     </section>
+    </Suspense>
 
   )
 }

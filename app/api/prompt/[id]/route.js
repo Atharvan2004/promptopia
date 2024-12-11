@@ -5,7 +5,7 @@ export const GET = async (req, { params }) => {
   try {
     await connectDB();
 
-    const response = await Prompt.findById(params.id).populate("creator");
+    const response = await Prompt.findById( params.id).populate("creator");
     if (!response) return new Response({ message: "Not found" });
     return new Response(JSON.stringify(response));
   } catch (error) {
